@@ -1,5 +1,5 @@
 resource "azurerm_container_registry" "acr" {
-  name                     = format("%s%s", var.acr_name, var.project_name)
+  name                     = format("%s%s", var.acr_name, replace(var.project_name, "-",""))
   resource_group_name      = azurerm_resource_group.rg-global.name
   location                 = azurerm_resource_group.rg-global.location
   sku                      = var.acr_sku

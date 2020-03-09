@@ -11,7 +11,7 @@
 [For detail to create an Azure service principal with Azure CLI.](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)
 
 ```
-$ az ad sp create-for-rbac --role="Owner" --scopes="/subscriptions/SUBSCRIPTION_ID" --name <displayName>
+$ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/SUBSCRIPTION_ID" --name <displayName>
 
 ```
 

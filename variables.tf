@@ -204,7 +204,7 @@ variable "key_vault_sku_name" {
 }
 
 variable "sqlserver_name" {
-  default = format("%s_%s",var.project_name, "sqlserver")
+  default = "xyz-reality-sqlserver"
 }
 variable "sqlserver_version" {
   default = "12.0"
