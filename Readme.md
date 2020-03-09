@@ -23,6 +23,29 @@ $ az ad sp list --display-name <displayName>
 ```
 
 ### Steps:
+* Set up variables
+ 
+  Create a file with name "terraform.tfvars" under main folder and copy and paste below variables and change it with your values
+  ```
+  env = "<Environment eg. Development>"
+
+  location = "<Location of the Resource Group eg. eastus>"
+
+  azure_subscription_id = "<Azure Subscription ID>"
+
+  azure_sp_client_id = "<Service Principal AppId>"
+
+  azure_sp_client_secret = "<Service Principal Client Secret/Password>"
+
+  azure_sp_tenant_id = "<Service Principal Tenant Id>"
+
+  azure_sp_object_id = "<Service Principal Object Id>df"
+
+  sqlserver_admin_login = "<SQL Server adminastrator user name>"
+
+  sqlserver_admin_password = "<SQL Server adminastrator user password>"
+
+  ```
 
 * Initialisation of Terraform. There two ways to keep track the terraform states. You need to decide which one to follow.
 
