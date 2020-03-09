@@ -14,15 +14,15 @@ resource "azurerm_role_assignment" "ra-managed-identity" {
 }
 
 resource "azurerm_role_assignment" "ra_contributor" {
-  scope                = azurerm_application_gateway.appgw-network.id
+  scope                = azurerm_application_gateway.appgw.id
   role_definition_name = "Contributor"
   principal_id         = azurerm_user_assigned_identity.identity-xyz-reality.principal_id
-  depends_on           = [azurerm_user_assigned_identity.identity-xyz-reality, azurerm_application_gateway.appgw-network]
+  depends_on           = [azurerm_user_assigned_identity.identity-xyz-reality, azurerm_application_gateway.appgw]
 }
 
 resource "azurerm_role_assignment" "ra_reader" {
   scope                = azurerm_resource_group.rg-k8s.id
   role_definition_name = "Reader"
   principal_id         = azurerm_user_assigned_identity.identity-xyz-reality.principal_id
-  depends_on           = [azurerm_user_assigned_identity.identity-xyz-reality, azurerm_application_gateway.appgw-network, azurerm_resource_group.rg-k8s]
+  depends_on           = [azurerm_user_assigned_identity.identity-xyz-reality, azurerm_application_gateway.appgw, azurerm_resource_group.rg-k8s]
 }

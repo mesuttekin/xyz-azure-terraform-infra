@@ -1,4 +1,4 @@
-resource "azurerm_application_gateway" "appgw-network" {
+resource "azurerm_application_gateway" "appgw" {
   name                = var.app_gateway_name
   resource_group_name = azurerm_resource_group.rg-k8s.name
   location            = azurerm_resource_group.rg-k8s.location

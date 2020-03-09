@@ -42,6 +42,11 @@ variable "resource_group_name_global" {
   default     = "rg-global"
 }
 
+variable "resource_group_name_database" {
+  description = "Name of the database resource group."
+  default = "rg-database"
+}
+
 variable "acr_name" {
   description = "Name of the azure container registry."
   default     = "acr"
@@ -196,4 +201,17 @@ variable "key_vault_enabled_for_disk_encryption" {
 
 variable "key_vault_sku_name" {
   default = "standard"
+}
+
+variable "sqlserver_name" {
+  default = format("%s_%s",var.project_name, "sqlserver")
+}
+variable "sqlserver_version" {
+  default = "12.0"
+}
+variable "sqlserver_admin_login" {
+  description = "SQL Server Administrator user name"
+}
+variable "sqlserver_admin_password" {
+  description = "SQL Server Administrator user password"
 }

@@ -39,6 +39,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     service_cidr       = var.aks_service_cidr
   }
 
-  depends_on = [azurerm_subnet.aks_subnet, azurerm_application_gateway.appgw-network, azurerm_resource_group.rg-k8s]
+  depends_on = [azurerm_subnet.aks_subnet, azurerm_application_gateway.appgw, azurerm_resource_group.rg-k8s]
   tags       = var.tags
+
 }

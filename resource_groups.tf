@@ -24,3 +24,9 @@ resource "azurerm_resource_group" "rg-global" {
     environment = var.env
   }
 }
+
+resource "azurerm_resource_group" "rg-database" {
+  name     = format("%s-%s", var.resource_group_name_database, var.location)
+  location = var.location
+}
+
