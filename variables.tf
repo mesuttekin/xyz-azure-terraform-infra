@@ -109,12 +109,12 @@ variable "app_gateway_name" {
 
 variable "app_gateway_sku" {
   description = "Name of the Application Gateway SKU."
-  default     = "Standard_Small"
+  default     = "Standard_v2"
 }
 
 variable "app_gateway_tier" {
   description = "Tier of the Application Gateway SKU."
-  default     = "Standard"
+  default     = "Standard_v2"
 }
 
 variable "app_gateway_sku_capacity" {

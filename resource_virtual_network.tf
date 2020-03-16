@@ -29,8 +29,8 @@ resource "azurerm_public_ip" "public-ip" {
   name                = format("public-ip-%s", azurerm_resource_group.rg-net.location)
   location            = azurerm_resource_group.rg-net.location
   resource_group_name = azurerm_resource_group.rg-net.name
-  allocation_method   = "Dynamic"
-  sku                 = "Basic"
+  allocation_method   = "Static"
+  sku                 = "Standard"
   domain_name_label   = var.project_name
 
   tags = var.tags

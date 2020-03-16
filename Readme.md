@@ -1,4 +1,18 @@
-## Create an Application Gateway ingress controller and Kubernetes Service in Azure
+## XYZ Reality Cloud Infrastructure  
+
+![Infrastructure diagram](images/xyz-reality-infra.png)
+
+Azure resources are used to provision the services. Please find below description for resources which are used in this project.
+
+* Azure Kubernetes Service (AKS):  To accomplish provisioning, upgrading and scaling resources on-demand,  AKS is used. It manages hosted Kubernetes environment. AKS makes it quick and easy to deploy and manage containerized applications without container orchestration expertise. All micro services are deployed to AKS under virtual network with private subnet. 
+* Azure Application Gateway is a web traffic load balancer that enables you to manage traffic to your web applications, DDoS Protection, URL-based routing and more..
+* Kubernetes ingress resources are used to configure the ingress rules for individual Kubernetes services. Using an ingress controller and ingress rules, a single IP address can route traffic to multiple services in a Kubernetes cluster. An ingress controller provides various features for Kubernetes services. These features include reverse proxy, configurable traffic routing, and TLS termination.
+* Azure Virtual Network (VNet) is the fundamental building block for your private network in Azure. VNet enables Azure resources like Application Gateway, AKS and Database to securely communicate with each other, the internet, and on-premises networks. VNet is similar to a traditional network that you'd operate in your own data center, but brings with it additional benefits of Azure's infrastructure such as scale, availability, and isolation.
+* A network security group (NSG) is a networking filter (firewall) containing a list of security rules allowing or denying network traffic to resources connected to Azure VNets.  I have setup NSG to allow inbound traffic from application gateway to the UI service and VM to VM traffic and deny all other inbound traffic. I also allow  outbound traffic to connect any VM to internet.
+* Azure Key Vault is used to encrypt keys and small secrets like passwords that use keys stored in hardware security modules (HSMs). It stores jet secret JWT secret and database password.
+* Public IP address is an Azure resource with its own configurable settings. It enables Inbound communication from the Internet to the Application Gateway and it routes the traffic to AKS pods.
+* Container Registry is used to store Docker container images.
+* Virtual Machines: Application gateway runs on a Standard_V2 VM and  AKS runs on Standard_D12_v2 VM. 
 
 #### Prerequisites:
 
