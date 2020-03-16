@@ -174,5 +174,3 @@ helm install -f helm-config.yaml appgw-ingress-controller application-gateway-ku
 
 
 ```
-
-Note: This application emerge from the article [Tutorial: Create an Application Gateway ingress controller in Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/terraform/terraform-create-k8s-cluster-with-aks-applicationgateway-ingress)
